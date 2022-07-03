@@ -6,12 +6,37 @@ meta:
     '11st-Starter-Kit is a minimal starting point for building static websites
     with 11ty, powered by Vite with Tailwind CSS and Alpine.js.'
 intro:
-  title: 'Welcome to Your Eleventy App'
+  title: 'Inflatable Stand Up Paddle Board Rentals in Hood River, Oregon.'
   desc:
-    'For a guide and recipes on how to configure / customize this project, check
-    out the <a href="https://www.11ty.dev/docs/" class="text-gray-900
-    font-medium underline">Eleventy</a> and <a href="https://vitejs.dev/"
-    class="text-gray-900 font-medium underline">Vite</a> documentation.'
+    'SUPs delivered directly to your vacation rental.'
+why-shr:
+  intro: 'Why SUP Hood River?'
+  icons:
+  - code: 'fa-person-hiking'
+    headline: 'Take Almost Anywhere'
+    copy: 'Easy to pack means you can get away from the wind and crowds at the waterfront and explore new places!'
+  - code: 'fa-calendar-days'
+    headline: 'Take Almost Anywhere'
+    copy: 'Easy to pack means you can get away from the wind and crowds at the waterfront and explore new places!'
+  - code: 'fa-location-smile'
+    color-swap: true
+    headline: 'Drop off / Pick Up'
+    copy: 'We will drop off and pick up SUPs to your location so you don’t have to worry about logistics.'
+  - code: 'fa-hundred-points'
+    color-swap: true
+    headline: 'High Quality Gear'
+    copy: 'Our rental fleet is comprised of 2022 Slingshot Crossbreed SUP’s. They are inspected after every rental to insure quality.'
+how-to:
+  intro: How-To Videos
+  videos:
+  - src: 'https://www.youtube.com/embed/q0s-ikJ5EmM'
+    caption: 'Setting Up Your Inflatable SUP'
+  - src: 'https://www.youtube.com/embed/q0s-ikJ5EmM'
+    caption: 'Setting Up Your Inflatable SUP'
+  - src: 'https://www.youtube.com/embed/q0s-ikJ5EmM'
+    caption: 'Setting Up Your Inflatable SUP'
+where-to:
+  intro: Where to SUP
 ---
 
 ## Community

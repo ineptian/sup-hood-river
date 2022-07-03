@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-yellow: #FBB15B;
+    --color-off-white: #F0E5D2;
+
+    font-variant-ligatures: none;
+  }
+
+  body.mobile-nav-open {
+      @apply overflow-hidden lg:overflow-auto;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block rounded px-8 py-3 transition-all hover:brightness-110 text-sm font-semibold;
+  }
+}
+
+.underline-wavy {
+  @apply mb-4;
+
+  span.wavy {
+    @apply 
+    relative
+    inline-block
+    after:absolute
+    after:w-2/3
+    after:mx-auto
+    after:h-[8px]
+    after:left-0
+    after:right-0
+    after:-bottom-4
+    after:bg-wavy-yellow
+    after:bg-repeat-x
+    after:bg-center
+  ;
+  }
+}

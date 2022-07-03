@@ -1,9 +1,11 @@
 import './styles/main.css';
 
 import Alpine from 'alpinejs';
+import focus from '@alpinejs/focus';
 
 window.Alpine = Alpine;
 
+Alpine.plugin(focus);
 Alpine.start();
 
 const env = document.querySelector('body').dataset.env;
