@@ -1,0 +1,80 @@
+---
+layout: 'layouts/blank.html'
+title: 'Reserve your SUP'
+meta:
+  desc:
+    '11st-Starter-Kit is a minimal starting point for building static websites
+    with 11ty, powered by Vite with Tailwind CSS and Alpine.js.'
+---
+
+<div class="container mx-auto px-8 py-24">
+  <h1 class="underline-wavy block text-center text-4xl font-bold md:text-5xl">
+    <span class="wavy">Inflatable SUP Rentals</span>
+  </h1>
+  <div class="mt-12 flex justify-center">
+    <div
+      class="flex items-center space-x-6 rounded bg-dark-blue py-4 px-6 text-off-white"
+    >
+      <span class="font-medium">Select rental period</span>
+      <div class="booqable-datepicker custom-booqable-datepicker"></div>
+    </div>
+  </div>
+  <div class="grid gap-8 pt-24 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <img
+        src="https://cdn.shopify.com/s/files/1/0508/8093/8184/products/crossbreed-11-airtech-package-aqua-slingshot-sports-972599_1080x.jpg?v=1622520602"
+        alt=""
+        class="rounded"
+      />
+      <h3 class="mt-4 text-2xl font-medium">Single SUP Rental</h3>
+      <div
+        class="booqable-product-button custom-booqable mt-4"
+        data-id="sup-rental"
+      ></div>
+    </div>
+    <div>
+      <img
+        src="https://cdn.shopify.com/s/files/1/0508/8093/8184/products/crossbreed-11-airtech-package-aqua-slingshot-sports-972599_1080x.jpg?v=1622520602"
+        alt=""
+        class="rounded"
+      />
+      <h3 class="mt-4 text-2xl font-medium">Two SUP Rental</h3>
+      <div
+        class="booqable-product-button custom-booqable mt-4"
+        data-id="2-sup-rental"
+      ></div>
+    </div>
+    <div>
+      <img
+        src="https://cdn.shopify.com/s/files/1/0508/8093/8184/products/crossbreed-11-airtech-package-aqua-slingshot-sports-972599_1080x.jpg?v=1622520602"
+        alt=""
+        class="rounded"
+      />
+      <h3 class="mt-4 text-2xl font-medium">Three SUP Rental</h3>
+      <div
+        class="booqable-product-button custom-booqable mt-4"
+        data-id="3-sup-rental"
+      ></div>
+    </div>
+    <div>
+      <img
+        src="https://cdn.shopify.com/s/files/1/0508/8093/8184/products/crossbreed-11-airtech-package-aqua-slingshot-sports-972599_1080x.jpg?v=1622520602"
+        alt=""
+        class="rounded"
+      />
+      <h3 class="mt-4 text-2xl font-medium">Four SUP Rental</h3>
+      <div
+        class="booqable-product-button custom-booqable mt-4"
+        data-id="4-sup-rental"
+      ></div>
+    </div>
+  </div>
+  <div class="relative mt-24 flex items-center justify-center text-center">
+    <div class="mx-auto w-full rounded bg-dark-blue p-12 text-off-white">
+      <h2 class="text-3xl font-bold lg:text-5xl">
+        Need to rent more than 4 boards?
+      </h2>
+      <a href="#" class="btn mt-8 bg-yellow text-dark-blue">Contact Us</a>
+    </div>
+  </div>
+</div>

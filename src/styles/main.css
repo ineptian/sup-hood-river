@@ -41,3 +41,23 @@
   ;
   }
 }
+
+.custom-booqable-datepicker {
+  .from, .till {
+    @apply text-dark-blue;
+  }
+}
+
+.custom-booqable { 
+  .bq-bundle-contents {
+    @apply hidden;
+  }
+
+  .booqable-component .booqable-product-button-wrapper input.bq-quantity {
+    @apply hidden;
+  }
+
+  .booqable-component .booqable-product-button-wrapper .bq-control>:first-child {
+    @apply hidden;
+  }
+}
