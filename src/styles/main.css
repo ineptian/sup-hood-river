@@ -8,10 +8,15 @@
     --color-off-white: #F0E5D2;
 
     font-variant-ligatures: none;
+    scroll-behavior: smooth;
   }
 
   body.mobile-nav-open {
       @apply overflow-hidden lg:overflow-auto;
+  }
+
+  p {
+    @apply font-light;
   }
 }
 
@@ -59,5 +64,15 @@
 
   .booqable-component .booqable-product-button-wrapper .bq-control>:first-child {
     @apply hidden;
+  }
+}
+
+.where-to-sup-grid {
+  .wts-entry {
+    @apply border-b border-blue border-opacity-20 mb-14 pb-14;
+
+    &:last-child {
+      @apply border-b-0 mb-0 pb-0;
+    }
   }
 }

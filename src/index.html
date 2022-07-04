@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/home.html'
-title: 'Home'
+title: 'Inflatable SUP Rentals'
 meta:
   desc: 'Inflatable Stand Up Paddle Board Rentals in Hood River, Oregon. Delivered directly to your vacation rental.'
 intro:
@@ -60,7 +60,7 @@ where-to:
             <p class="mt-4 text-2xl">{{ intro.desc }}</p>
             <div class="booqable-datepicker mt-6"></div>
             <a
-              href="#"
+              href="/reserve/"
               class="btn mt-2 block w-full rounded-t-none bg-yellow text-center"
               >Check Availability</a
             >
@@ -142,7 +142,7 @@ where-to:
     id="where-to-sup"
     class="underline-wavy mt-24 text-center text-3xl font-bold md:text-5xl"
   >
-    <span class="wavy">{{ where-to.intro }}</span>
+    <span class="wavy">{{ where-to-sup.intro }}</span>
   </h2>
 
   <!-- Tabs -->
@@ -167,11 +167,6 @@ where-to:
     x-id="['tab']"
     class="mt-12 w-full"
   >
-    <div class="flex">
-      <a href="#" class="ml-auto mb-2 text-lg font-medium text-blue underline"
-        >View all locations</a
-      >
-    </div>
     <!-- Tab List -->
     <ul
       x-ref="tablist"
@@ -185,6 +180,7 @@ where-to:
       class="-mb-0.5 flex items-stretch rounded-t bg-blue"
     >
       <!-- Tab -->
+      {% for location in where-to-sup.locations %}
       <li>
         <button
           :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
@@ -194,69 +190,66 @@ where-to:
           type="button"
           :tabindex="isSelected($el.id) ? 0 : -1"
           :aria-selected="isSelected($el.id)"
-          :class="isSelected($el.id) ? 'border-blue bg-off-white text-blue' : 'border-transparent text-off-white'"
-          class="inline-flex rounded-t border-2 border-b-0 px-4 py-2.5 font-medium"
+          :class="isSelected($el.id) ? 'border-blue bg-off-white text-blue cursor-default' : 'border-transparent text-off-white bg-blue hover:brightness-110'"
+          class="inline-flex rounded-t border-2 border-b-0 px-4 py-2.5 font-medium text-off-white"
           role="tab"
         >
-          Hood River Valley
+          {{ location }}
         </button>
       </li>
-
-      <li>
-        <button
-          :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
-          @click="select($el.id)"
-          @mousedown.prevent
-          @focus="select($el.id)"
-          type="button"
-          :tabindex="isSelected($el.id) ? 0 : -1"
-          :aria-selected="isSelected($el.id)"
-          :class="isSelected($el.id) ? 'border-blue bg-off-white text-blue' : 'border-transparent text-off-white'"
-          class="inline-flex rounded-t border-2 border-b-0 px-5 py-2.5 font-medium"
-          role="tab"
-        >
-          Hood River Waterfront
-        </button>
-      </li>
-
-      <li>
-        <button
-          :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
-          @click="select($el.id)"
-          @mousedown.prevent
-          @focus="select($el.id)"
-          type="button"
-          :tabindex="isSelected($el.id) ? 0 : -1"
-          :aria-selected="isSelected($el.id)"
-          :class="isSelected($el.id) ? 'border-blue bg-off-white text-blue' : 'border-transparent text-off-white'"
-          class="inline-flex rounded-t border-2 border-b-0 px-5 py-2.5 font-medium"
-          role="tab"
-        >
-          Mt. Hood Wilderness
-        </button>
-      </li>
+      {% endfor %}
     </ul>
 
     <!-- Panels -->
     <div role="tabpanels" class="rounded-b border-2 border-blue bg-off-white">
-      <!-- Panel -->
+      <!-- Panel 1 - Hood River -->
       <section
         x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
         :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
         role="tabpanel"
         class="p-8"
       >
-        <h2 class="text-xl font-bold">Tab 1 Content</h2>
-        <p class="mt-2 text-gray-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quo
-          sequi error quibusdam quas temporibus animi sapiente eligendi!
-          Deleniti minima velit recusandae iure.
-        </p>
-        <button
-          class="mt-5 rounded-md border border-gray-200 px-4 py-2 text-sm"
-        >
-          Something focusable
-        </button>
+        <div class="where-to-sup-grid mt-12 grid gap-x-24 md:grid-cols-2">
+          <div class="space-y-8">
+            <img
+              src="https://via.placeholder.com/641x866"
+              alt="Placeholder Image"
+            />
+            <img
+              src="https://via.placeholder.com/641x641"
+              alt="Placeholder Image"
+            />
+          </div>
+          <div class="">
+            {% for location in where-to-sup.hood-river %} {% include
+            "partials/where-to-sup-entry.html" %} {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 2 - HR Waterfront -->
+      <section
+        x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+        :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+        role="tabpanel"
+        class="p-8"
+      >
+        <div class="where-to-sup-grid mt-12 grid gap-x-24 md:grid-cols-2">
+          <div class="space-y-8">
+            <img
+              src="https://via.placeholder.com/641x866"
+              alt="Placeholder Image"
+            />
+            <img
+              src="https://via.placeholder.com/641x641"
+              alt="Placeholder Image"
+            />
+          </div>
+          <div class="">
+            {% for location in where-to-sup.hr-waterfront %} {% include
+            "partials/where-to-sup-entry.html" %} {% endfor %}
+          </div>
+        </div>
       </section>
 
       <section
@@ -265,17 +258,22 @@ where-to:
         role="tabpanel"
         class="p-8"
       >
-        <h2 class="text-xl font-bold">Tab 2 Content</h2>
-        <p class="mt-2 text-gray-500">
-          Fugiat odit alias, eaque optio quas nobis minima reiciendis voluptate
-          dolorem nisi facere debitis ea laboriosam vitae omnis ut voluptatum
-          eos. Fugiat?
-        </p>
-        <button
-          class="mt-5 rounded-md border border-gray-200 px-4 py-2 text-sm"
-        >
-          Something else focusable
-        </button>
+        <div class="where-to-sup-grid mt-12 grid gap-x-24 md:grid-cols-2">
+          <div class="space-y-8">
+            <img
+              src="https://via.placeholder.com/641x866"
+              alt="Placeholder Image"
+            />
+            <img
+              src="https://via.placeholder.com/641x641"
+              alt="Placeholder Image"
+            />
+          </div>
+          <div class="">
+            {% for location in where-to-sup.mt-hood %} {% include
+            "partials/where-to-sup-entry.html" %} {% endfor %}
+          </div>
+        </div>
       </section>
 
       <section
@@ -284,181 +282,81 @@ where-to:
         role="tabpanel"
         class="p-8"
       >
-        <h2 class="text-xl font-bold">Tab 3 Content</h2>
-        <p class="mt-2 text-gray-500">
-          Fugiat odit alias, eaque optio quas nobis minima reiciendis voluptate
-          dolorem nisi facere debitis ea laboriosam vitae omnis ut voluptatum
-          eos. Fugiat?
-        </p>
-        <button
-          class="mt-5 rounded-md border border-gray-200 px-4 py-2 text-sm"
-        >
-          Something else focusable
-        </button>
+        <div class="where-to-sup-grid mt-12 grid gap-x-24 md:grid-cols-2">
+          <div class="space-y-8">
+            <img
+              src="https://via.placeholder.com/641x866"
+              alt="Placeholder Image"
+            />
+            <img
+              src="https://via.placeholder.com/641x641"
+              alt="Placeholder Image"
+            />
+          </div>
+          <div class="">
+            {% for location in where-to-sup.mosier-dalles %} {% include
+            "partials/where-to-sup-entry.html" %} {% endfor %}
+          </div>
+        </div>
       </section>
     </div>
   </div>
-
-  <!-- <div 
-    x-data="{ 
-      selectedId: null,
-      init() {
-        // Set the first available tab on the page on page load.
-        this.$nextTick(() => this.select(this.$id('tab', 1)))
-      },
-      tab: window.location.hash ? window.location.hash.substring(1) : 'description',
-      select(id) {
-        this.selectedId = id
-      },
-      isSelected(id) {
-        return this.selectedId === id
-      },
-      whichChild(el, parent) {
-        return Array.from(parent.children).indexOf(el) + 1
-      }
-    }" 
-    x-id="['tab']"
-    class="w-full mt-12"
-  >
-    <ul
-      x-ref="tablist"
-      @keydown.right.prevent.stop="$focus.wrap().next()"
-      @keydown.home.prevent.stop="$focus.first()"
-      @keydown.page-up.prevent.stop="$focus.first()"
-      @keydown.left.prevent.stop="$focus.wrap().prev()"
-      @keydown.end.prevent.stop="$focus.last()"
-      @keydown.page-down.prevent.stop="$focus.last()"
-      role="tablist"
-      class="-mb-0.5 flex items-stretch bg-blue rounded-t"
-    >
-      <li><button 
-        :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
-        :class="{ 'bg-off-white text-blue': tab === 'description' }" 
-        class="inline-flex px-4 py-2.5 border-blue border-2 border-b-0 rounded-t font-medium text-off-white"
-        @click="select($el.id); tab = 'description'; window.location.hash = 'description'" 
-        @mousedown.prevent
-        @focus="select($el.id); tab = 'description'; window.location.hash = 'description'" 
-        type="button"
-        :tabindex="isSelected($el.id) ? 0 : -1"
-        :aria-selected="isSelected($el.id)"
-      >Description</button></li>
-      <li><button 
-        :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
-        :class="{ 'bg-off-white text-blue': tab === 'reviews' }" 
-        class="inline-flex px-4 py-2.5 border-blue border-2 border-b-0 rounded-t font-medium text-off-white"
-        @click="select($el.id); tab = 'reviews'; window.location.hash = 'reviews'" 
-        @mousedown.prevent
-        @focus="select($el.id); tab = 'reviews'; window.location.hash = 'reviews'" 
-        type="button"
-        :tabindex="isSelected($el.id) ? 0 : -1"
-        :aria-selected="isSelected($el.id)"
-      >Reviews</button></li>
-    </ul>
-
-    <div role="tabpanels" class="bg-off-white border-2 border-blue rounded-b">
-      <section 
-        x-show="tab === 'description'"
-        :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
-        role="tabpanel"
-        class="p-8"
-      >
-        Lorem ipsum description.
-      </section>
-      <section 
-        x-show="tab === 'reviews'"
-        :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
-        role="tabpanel"
-        class="p-8"
-      >
-        Lorem ipsum reviews.
-      </section>
-    </div>
-  </div> -->
+  <div class="flex items-end justify-end">
+    <span
+      class="mt-2 inline-block border-b-2 border-dark-blue pb-0.5 text-dark-blue transition-all hover:border-blue hover:text-blue"
+      ><a href="#where-to-sup" class="font-semibold"
+        >Back to location selector <i class="fa-solid fa-up inline"></i></a
+    ></span>
+  </div>
 
   <h2 class="underline-wavy mt-24 text-center text-3xl font-bold md:text-5xl">
-    <span class="wavy">FAQ's</span>
+    <span class="wavy">{{ faqs.intro }}</span>
   </h2>
-  <div class="mx-auto mt-16 max-w-screen-lg">
-    <h3 class="text-2xl font-medium text-blue">Rental Questions</h3>
-    <div x-data="{ active: 1 }" class="space-y-4">
-      <div
-        x-data="{
-          id: 1,
-          get expanded() {
-            return this.active === this.id
-          },
-          set expanded(value) {
-            this.active = value ? this.id : null
-          },
-        }"
-        role="region"
-        class="rounded bg-dark-blue shadow"
-      >
-        <h2>
-          <button
-            x-on:click="expanded = !expanded"
-            :aria-expanded="expanded"
-            class="flex w-full items-center justify-between px-6 py-4 text-lg font-medium text-yellow"
-          >
-            <span>Do you offer any discounts for long term rentals?</span>
-            <span x-show="expanded" aria-hidden="true" class="ml-4"
-              >&minus;</span
+  <div class="mx-auto mt-16 max-w-screen-lg space-y-8">
+    {% for accordion in faqs.accordions %}
+    <div>
+      <h3 class="text-2xl font-medium text-blue">{{ accordion.title }}</h3>
+      <div x-data="{ active: 1 }" class="space-y-4">
+        {% for question in accordion.questions %}
+        <div
+          x-data="{
+                id: {{ forloop.index }},
+                get expanded() {
+                  return this.active === this.id
+                },
+                set expanded(value) {
+                  this.active = value ? this.id : null
+                },
+              }"
+          role="region"
+          class="rounded bg-dark-blue shadow"
+        >
+          <h2>
+            <button
+              x-on:click="expanded = !expanded"
+              :aria-expanded="expanded"
+              class="flex w-full items-center justify-between px-6 py-4 text-lg font-medium text-yellow"
             >
-            <span x-show="!expanded" aria-hidden="true" class="ml-4"
-              >&plus;</span
-            >
-          </button>
-        </h2>
+              <span>{{ question.question }}</span>
+              <span x-show="expanded" aria-hidden="true" class="ml-4"
+                >&minus;</span
+              >
+              <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                >&plus;</span
+              >
+            </button>
+          </h2>
 
-        <div x-show="expanded" x-collapse>
-          <div class="px-6 pb-4 font-light text-off-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam
-            quod natus deleniti architecto eaque consequuntur ex, illo neque
-            iste repellendus modi, quasi ipsa commodi saepe? Provident ipsa
-            nulla earum.
+          <div x-show="expanded" x-collapse>
+            <div class="px-6 pb-4 font-light text-off-white">
+              {{ question.answer }}
+            </div>
           </div>
         </div>
-      </div>
-
-      <div
-        x-data="{
-          id: 2,
-          get expanded() {
-              return this.active === this.id
-          },
-          set expanded(value) {
-              this.active = value ? this.id : null
-          },
-      }"
-        role="region"
-        class="rounded-lg bg-white shadow"
-      >
-        <h2>
-          <button
-            x-on:click="expanded = !expanded"
-            :aria-expanded="expanded"
-            class="flex w-full items-center justify-between px-6 py-4 text-xl font-bold"
-          >
-            <span>Question #2</span>
-            <span x-show="expanded" aria-hidden="true" class="ml-4"
-              >&minus;</span
-            >
-            <span x-show="!expanded" aria-hidden="true" class="ml-4"
-              >&plus;</span
-            >
-          </button>
-        </h2>
-
-        <div x-show="expanded" x-collapse>
-          <div class="px-6 pb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam
-            quod natus deleniti architecto eaque consequuntur ex, illo neque
-            iste repellendus modi, quasi ipsa commodi saepe? Provident ipsa
-            nulla earum.
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>
 

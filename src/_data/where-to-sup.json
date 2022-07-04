@@ -1,0 +1,138 @@
+{
+  "intro": "Where to SUP",
+  "locations": [
+    "Hood River Valley",
+    "Hood River Watefront",
+    "Mt. Hood",
+    "Mosier & The Dalles"
+  ],
+  "hood-river": [
+    {
+      "title": "Kingsley Reservoir",
+      "favorite": true,
+      "drive-time": "20 minutes",
+      "level": "Easy",
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Day use Fee: <span class='font-semibold'>$5</span></p>",
+      "directions": "https://www.google.com/maps/place/Kingsley+Reservoir+Staging+Area/@45.6390344,-121.6771904,16.54z/data=!4m13!1m7!3m6!1s0x5495e27b69e12f85:0x444340f2f884c580!2sKingsley+Reservoir!3b1!8m2!3d45.6380222!4d-121.6782611!3m4!1s0x5495e27967a8b43d:0xb4305c0ca54f0695!8m2!3d45.6401664!4d-121.672782",
+      "learn-more": ""
+    },
+    {
+      "title": "Lost Lake",
+      "favorite": false,
+      "drive-time": "45 minutes",
+      "level": "Easy",
+      "description": "<p></p>",
+      "directions": "https://www.google.com/maps/dir//Lost+Lake,+Oregon+97014/@45.4900701,-121.8574127,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x5495f0e44973d44f:0xa7ff638a5dbe365!2m2!1d-121.8223075!2d45.4900153!3e0"
+    },
+    {
+      "title": "Laurance Lake",
+      "favorite": false,
+      "drive-time": "35 minutes",
+      "level": "Medium",
+      "description": "<p></p>",
+      "directions": "https://www.google.com/maps/place/Laurance+Lake+Rd,+Oregon+97041/data=!4m2!3m1!1s0x5495f8fa72df6a41:0x605cfb413a603fe4?sa=X&ved=2ahUKEwiX8Njwk-D4AhWjKn0KHQ8VBjMQ8gF6BAgDEAE"
+    },
+    {
+      "title": "Wahtum Lake",
+      "favorite": false,
+      "drive-time": "45 minutes",
+      "level": "Hard - Hike In",
+      "description": "<p></p>",
+      "directions": "https://www.google.com/maps/place/Wahtum+Lake/@45.5819221,-121.7956727,17z/data=!3m1!4b1!4m5!3m4!1s0x5495e4e45d2edb79:0x71c56be6fcd5bb94!8m2!3d45.5812785!4d-121.7951114"
+    }
+  ],
+  "hr-waterfront": [
+    {
+      "title": "The Boat Basin",
+      "favorite": false,
+      "drive-time": "5 minutes",
+      "level": "Easy",
+      "description": "<p></p>",
+      "directions": ""
+    },
+    {
+      "title": "The Hook",
+      "favorite": false,
+      "drive-time": "5 minutes",
+      "level": "Easy",
+      "description": "<p></p>",
+      "directions": ""
+    },
+    {
+      "title": "HR Waterfront Park",
+      "favorite": false,
+      "drive-time": "5 minutes",
+      "level": "Easy",
+      "description": "<p></p>",
+      "directions": ""
+    },
+    {
+      "title": "Event Site",
+      "favorite": false,
+      "drive-time": "5 minutes",
+      "level": "Easy",
+      "description": "<p></p>",
+      "directions": ""
+    },
+    {
+      "title": "The Spit",
+      "favorite": false,
+      "drive-time": "5 minutes",
+      "level": "Easy",
+      "description": "<p></p>",
+      "directions": ""
+    },
+    {
+      "title": "White Salmon River",
+      "favorite": false,
+      "drive-time": "5 minutes",
+      "level": "Easy",
+      "description": "<p></p>",
+      "directions": ""
+    }
+  ],
+  "mt-hood": [
+    {
+      "title": "Frog Lake",
+      "favorite": false,
+      "drive-time": "",
+      "level": "",
+      "description": "<p></p>",
+      "directions": ""
+    },
+    {
+      "title": "Trillium Lake",
+      "favorite": false,
+      "drive-time": "",
+      "level": "",
+      "description": "<p></p>",
+      "directions": ""
+    },
+    {
+      "title": "Clear Lake",
+      "favorite": false,
+      "drive-time": "",
+      "level": "",
+      "description": "<p></p>",
+      "directions": ""
+    }
+  ],
+  "mosier-dalles": [
+    {
+      "title": "Mosier Launch",
+      "favorite": false,
+      "drive-time": "",
+      "level": "",
+      "description": "<p></p>",
+      "directions": ""
+    },
+    {
+      "title": "Mayer State Park",
+      "favorite": false,
+      "drive-time": "",
+      "level": "",
+      "description": "<p></p>",
+      "directions": ""
+    }
+  ]
+}
